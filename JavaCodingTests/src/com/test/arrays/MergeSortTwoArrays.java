@@ -11,6 +11,13 @@ public class MergeSortTwoArrays {
 		int[] numArray1 = {5,7,3,1,7,4};
         int[] numArray2 = {4,2,1,6,8,2};
         
+        /* Shortest Way
+        SortedSet<Integer> numberSet = new TreeSet<Integer>();
+        for(int number:numArray1){numberSet.add(number);}
+        for(int number:numArray2){numberSet.add(number);}
+        numberSet.forEach(System.out::println);
+        */
+        
         int resultArraySize = numArray1.length + numArray2.length;
         int[] resultArray = new int[resultArraySize];
         
@@ -34,12 +41,7 @@ public class MergeSortTwoArrays {
         for(int num : resultArray){
             System.out.println(num);
         }
-        /* Shortest Way
-        SortedSet<Integer> numberSet = new TreeSet<Integer>();
-        for(int number:numArray1){numberSet.add(number);}
-        for(int number:numArray2){numberSet.add(number);}
-        numberSet.forEach(System.out::println);
-        */
+        
     }
     
     private static boolean isDuplicate(int[] resultArray, int insertNumber, int lastInsertIndex) {
@@ -65,7 +67,7 @@ public class MergeSortTwoArrays {
         for(int i=0; i<clonedSortedArray.length; i++) {
             clonedSortedArray[i] = resultArray[i];
         }
-        //Arrays.sort(clonedSortedArray);
+        //Arrays.sort(clonedSortedArray); //Default Arrays Sorting
         QuickSort.sortArray(clonedSortedArray, 0, clonedSortedArray.length - 1);
         
         return clonedSortedArray;
